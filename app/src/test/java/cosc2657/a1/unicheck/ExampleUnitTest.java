@@ -1,4 +1,4 @@
-package cosc2657.a1.homepage;
+package cosc2657.a1.unicheck;
 
 import org.junit.Test;
 
