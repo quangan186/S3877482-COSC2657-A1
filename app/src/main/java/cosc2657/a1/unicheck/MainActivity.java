@@ -13,9 +13,14 @@ import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
+import cosc2657.a1.unicheck.databinding.ActivityMainBinding;
+
 public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView navigationView;
+
+    private HomeFragment homeFragment = new HomeFragment();
+    private LikedFragment likedFragment = new LikedFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,16 +28,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         navigationView = findViewById(R.id.bottomNav);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
+
         navigationView.setOnItemReselectedListener(new NavigationBarView.OnItemReselectedListener() {
             @Override
-            public void onNavigationItemReselected(@NonNull MenuItem item) {
+            public void onNavigationItemReselected(MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.home:
-                        Toast.makeText(MainActivity.this, "Home page", Toast.LENGTH_LONG).show();
-                        break;
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
+                        return;
                     case R.id.liked:
-                        Toast.makeText(MainActivity.this, "Liked", Toast.LENGTH_LONG).show();
-                        break;
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container, likedFragment).commit();
+                        return;
                     default:
                 }
             }
