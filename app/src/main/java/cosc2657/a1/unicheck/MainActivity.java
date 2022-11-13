@@ -31,18 +31,19 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
 
-        navigationView.setOnItemReselectedListener(new NavigationBarView.OnItemReselectedListener() {
+        navigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
-            public void onNavigationItemReselected(MenuItem item) {
+            public boolean onNavigationItemSelected(MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.home:
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
-                        return;
+                        return true;
                     case R.id.liked:
                         getSupportFragmentManager().beginTransaction().replace(R.id.container, likedFragment).commit();
-                        return;
+                        return true;
                     default:
                 }
+                return false;
             }
         });
     }
