@@ -1,8 +1,8 @@
 package cosc2657.a1.unicheck.model;
 
-import cosc2657.a1.unicheck.R;
+import java.io.Serializable;
 
-public class University {
+public class University implements Serializable {
     private int id;
     private String name;
     private String title;
