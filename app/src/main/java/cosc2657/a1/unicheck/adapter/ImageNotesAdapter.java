@@ -48,7 +48,7 @@ public class ImageNotesAdapter extends BaseAdapter {
         ImageView imageView = (ImageView) convertView.findViewById(R.id.child_image) ;
         TextView noteView = (TextView) convertView.findViewById(R.id.note);
 
-        imageView.setId(imageNotes[position].getImage());
+        imageView.setImageResource(imageNotes[position].getImage());
         noteView.setText(imageNotes[position].getNote());
 
         return convertView;

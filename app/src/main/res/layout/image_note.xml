@@ -7,11 +7,13 @@
     <ImageView
         android:id="@+id/child_image"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="250dp"
         />
     <TextView
         android:id="@+id/note"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textStyle="italic"
         />
 </LinearLayout>

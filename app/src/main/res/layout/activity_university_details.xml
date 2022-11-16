@@ -44,8 +44,11 @@
     </Toolbar>
 
     <ScrollView
+        android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:orientation="vertical"
         >
         <LinearLayout
             android:layout_width="match_parent"
@@ -85,7 +88,6 @@
                 android:text="Description"
                 android:lineSpacingMultiplier="0"
                 android:lineSpacingExtra="24sp"
-
                 />
 
             <TextView
@@ -99,6 +101,7 @@
                 android:id="@+id/image_notes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:divider="@color/vanilla"
                 />
 
             <Button
@@ -108,6 +111,7 @@
                 android:text="Click here to see more details"
                 android:backgroundTint="@color/maroon"
                 android:textColor="@color/vanilla"
+                android:layout_marginTop="20dp"
                 />
         </LinearLayout>
     </ScrollView>

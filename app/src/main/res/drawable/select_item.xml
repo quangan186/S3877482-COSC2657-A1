@@ -3,13 +3,11 @@
     <item
         android:color="@color/vanilla"
         android:state_selected="true"
-
         />
 
     <item
         android:color="@color/brown"
         android:state_selected="false"
-
         />
 
 </selector>
