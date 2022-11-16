@@ -1,12 +1,13 @@
 package cosc2657.a1.unicheck;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.fragment.app.Fragment;
+
+import cosc2657.a1.unicheck.R;
 
 public class LikedFragment extends Fragment {
 

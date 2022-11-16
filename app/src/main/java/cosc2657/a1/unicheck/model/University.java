@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class University implements Serializable {
     private int id;
+    private int introImage;
     private String name;
     private String title;
     private int logo;
@@ -11,9 +12,11 @@ public class University implements Serializable {
     private double tuitionFee;
     private String description;
     private String link;
+    private ImageNote[] imageNotes;
 
-    public University(int id, String name, String title, int logo, String address, double tuitionFee, String description, String link) {
+    public University(int id, int introImage, String name, String title, int logo, String address, double tuitionFee, String description, String link, ImageNote[] imageNotes) {
         this.id = id;
+        this.introImage = introImage;
         this.name = name;
         this.title = title;
         this.logo = logo;
@@ -21,20 +24,7 @@ public class University implements Serializable {
         this.tuitionFee = tuitionFee;
         this.description = description;
         this.link = link;
-    }
-
-    @Override
-    public String toString() {
-        return "University{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", title='" + title + '\'' +
-                ", logo='" + logo + '\'' +
-                ", address='" + address + '\'' +
-                ", tuitionFee=" + tuitionFee +
-                ", description='" + description + '\'' +
-                ", link='" + link + '\'' +
-                '}';
+        this.imageNotes = imageNotes;
     }
 
     public int getId() {
@@ -43,6 +33,14 @@ public class University implements Serializable {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getIntroImage() {
+        return introImage;
+    }
+
+    public void setIntroImage(int introImage) {
+        this.introImage = introImage;
     }
 
     public String getName() {
@@ -99,5 +97,13 @@ public class University implements Serializable {
 
     public void setLink(String link) {
         this.link = link;
+    }
+
+    public ImageNote[] getImageNotes() {
+        return imageNotes;
+    }
+
+    public void setImageNotes(ImageNote[] imageNotes) {
+        this.imageNotes = imageNotes;
     }
 }

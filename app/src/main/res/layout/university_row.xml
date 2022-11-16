@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/universityId"
+    android:id="@+id/university_id"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -24,7 +24,7 @@
         >
 
         <TextView
-            android:id="@+id/universityName"
+            android:id="@+id/university_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Home Fragment"
@@ -34,7 +34,7 @@
             />
 
         <TextView
-            android:id="@+id/universityTitle"
+            android:id="@+id/university_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"

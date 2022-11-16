@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import cosc2657.a1.unicheck.R;
+
 public class IntroPage extends AppCompatActivity {
 
     @Override

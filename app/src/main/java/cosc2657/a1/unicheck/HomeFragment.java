@@ -14,7 +14,8 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-import cosc2657.a1.unicheck.adapter.ArrayAdapter;
+import cosc2657.a1.unicheck.R;
+import cosc2657.a1.unicheck.adapter.UniversityListAdapter;
 import cosc2657.a1.unicheck.data.UniversityList;
 import cosc2657.a1.unicheck.model.University;
 
@@ -26,8 +27,8 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
-        listView = (ListView) rootView.findViewById(R.id.universityList);
-        listView.setAdapter(new ArrayAdapter(getActivity(),universities.getUniversities()));
+        listView = (ListView) rootView.findViewById(R.id.university_list);
+        listView.setAdapter(new UniversityListAdapter(getActivity(),universities.getUniversities()));
         return rootView;
     }
 }

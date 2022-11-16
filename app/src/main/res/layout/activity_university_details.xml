@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".UniversityDetails"
     android:orientation="vertical"
     android:background="@color/vanilla"
@@ -20,7 +20,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_back_button"
-            android:contentDescription="back" />
+            android:contentDescription="back"
+            android:onClick="backToPreviousPage"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -42,48 +43,74 @@
 
     </Toolbar>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="20dp"
-        android:orientation="vertical"
         >
-        <ImageView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
-        <TextView
-            android:id="@+id/universityFullName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Title"
-            android:textSize="36dp"
-            android:gravity="center"
-            />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="20dp"
+            >
+            <ImageView
+                android:id="@+id/intro_image"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                />
+            <TextView
+                android:id="@+id/university_fullname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:textSize="36dp"
+                android:gravity="center"
+                />
 
-        <TextView
-            android:id="@+id/universityDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Description"
-            android:padding="10dp"
-            android:lineSpacingMultiplier="0"
-            android:lineSpacingExtra="24sp"
+            <TextView
+                android:id="@+id/university_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:paddingVertical="20dp"
+                android:lineSpacingMultiplier="0"
+                android:lineSpacingExtra="24sp"
 
-            />
+                />
 
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:lineSpacingMultiplier="0"
+                android:lineSpacingExtra="24sp"
 
-        <Button
-            android:id="@+id/link_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Click here to see more details"
-            android:backgroundTint="@color/maroon"
-            android:textColor="@color/vanilla"
-            />
-    </LinearLayout>
+                />
+
+            <TextView
+                android:id="@+id/tuition_fee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="16dp"
+                />
+
+            <ListView
+                android:id="@+id/image_notes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+            <Button
+                android:id="@+id/link_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Click here to see more details"
+                android:backgroundTint="@color/maroon"
+                android:textColor="@color/vanilla"
+                />
+        </LinearLayout>
+    </ScrollView>
+
+
 </LinearLayout>

@@ -15,8 +15,8 @@ import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
+import cosc2657.a1.unicheck.R;
 import cosc2657.a1.unicheck.data.UniversityList;
-import cosc2657.a1.unicheck.databinding.ActivityMainBinding;
 import cosc2657.a1.unicheck.model.University;
 
 public class MainActivity extends AppCompatActivity {

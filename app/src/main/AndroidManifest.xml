@@ -20,20 +20,6 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".LikedActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".HomeActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".IntroPage"
             android:exported="true">
             <intent-filter>
