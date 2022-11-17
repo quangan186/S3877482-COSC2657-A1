@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -20,9 +21,12 @@ import java.util.Arrays;
 
 import cosc2657.a1.unicheck.R;
 import cosc2657.a1.unicheck.adapter.ImageNotesAdapter;
+import cosc2657.a1.unicheck.data.FavoriteList;
 import cosc2657.a1.unicheck.model.University;
 
 public class UniversityDetails extends AppCompatActivity {
+    private boolean isLiked = false;
+    private FavoriteList favoriteList = new FavoriteList();
 
     @SuppressLint("DefaultLocale")
     @Override
@@ -34,12 +38,36 @@ public class UniversityDetails extends AppCompatActivity {
         }
 
         University university = (University) getIntent().getSerializableExtra("University");
-        System.out.println(university.getIntroImage());
-        System.out.println(university.getId());
-        System.out.println(university.getName());
-        System.out.println(university.getDescription());
-        System.out.println(university.getLink());
-        System.out.println(Arrays.toString(university.getImageNotes()));
+//        System.out.println(university.getIntroImage());
+//        System.out.println(university.getId());
+//        System.out.println(university.getName());
+//        System.out.println(university.getDescription());
+//        System.out.println(university.getLink());
+//        System.out.println(Arrays.toString(university.getImageNotes()));
+
+        ImageButton likeButton = findViewById(R.id.like_button);
+
+        if (favoriteList.getFavoriteList().contains(university)){
+            likeButton.setImageResource(R.drawable.ic_like);
+        } else {
+            likeButton.setImageResource(R.drawable.ic_unlike);
+        }
+
+        likeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                isLiked = !isLiked;
+                if(isLiked){
+                    likeButton.setImageResource(R.drawable.ic_like);
+                    favoriteList.addFavoriteUniversity(university);
+                    System.out.println(favoriteList);
+                }else{
+                    likeButton.setImageResource(R.drawable.ic_unlike);
+                    favoriteList.deleteFavoriteUniversity(university);
+                    System.out.println(favoriteList);
+                }
+            }
+        });
 
         ImageView introImageView = (ImageView) findViewById(R.id.intro_image);
         TextView titleView = (TextView) findViewById(R.id.university_fullname);
@@ -67,6 +95,10 @@ public class UniversityDetails extends AppCompatActivity {
     }
 
     public void backToPreviousPage(View view){
+//        Intent intent = new Intent(this, MainActivity.class);
+//        intent.putExtra("favoriteList", favoriteList);
+//        startActivity(intent);
+        System.out.println(favoriteList.getFavoriteList());
         finish();
     }
 
