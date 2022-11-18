@@ -35,11 +35,15 @@ import cosc2657.a1.unicheck.model.University;
 
 public class HomeFragment extends Fragment {
     protected ListView listView;
-    protected ArrayList<University> universities = new UniversityList().getUniversities();
-    protected ArrayList<University> filteredList = new ArrayList<>();
+//    protected ArrayList<University> universities = new UniversityList().getUniversities();
+    protected ArrayList<University> filteredList;
     SearchView searchView;
     private View rootView;
     private UniversityListAdapter universityListAdapter;
+
+    public HomeFragment(ArrayList<University> filteredList) {
+        this.filteredList = filteredList;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -47,21 +51,20 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         rootView = inflater.inflate(R.layout.fragment_home, container, false);
         listView = (ListView) rootView.findViewById(R.id.university_list);
-        searchView = (SearchView) rootView.findViewById(R.id.search_university);
 
-        universityListAdapter = new UniversityListAdapter(getActivity(), universities);
+        universityListAdapter = new UniversityListAdapter(getActivity(), filteredList);
         listView.setAdapter(universityListAdapter);
-
+        universityListAdapter.notifyDataSetChanged();
 //        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 //            @Override
 //            public boolean onQueryTextSubmit(String s) {
-//                filter(s);
+////                filter(s);
 //                return false;
 //            }
 //
 //            @Override
 //            public boolean onQueryTextChange(String s) {
-//                filter(s);
+////                filter(s);
 //                return false;
 //            }
 //        });
@@ -127,13 +130,5 @@ public class HomeFragment extends Fragment {
 //        });
 //    }
 
-    public void filter(String text) {
-        for (University university : universities) {
-            if (university.getName().toLowerCase().contains(text)) {
-                filteredList.add(university);
-            }
-        }
-        listView.setAdapter(new UniversityListAdapter(getActivity(), filteredList));
-        universityListAdapter.notifyDataSetChanged();
-    }
+
 }
