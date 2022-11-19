@@ -1,6 +1,7 @@
 package cosc2657.a1.unicheck.model;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
 public class University implements Serializable {
     private int id;
@@ -105,5 +106,21 @@ public class University implements Serializable {
 
     public void setImageNotes(ImageNote[] imageNotes) {
         this.imageNotes = imageNotes;
+    }
+
+    @Override
+    public String toString() {
+        return "University{" +
+                "id=" + id +
+                ", introImage=" + introImage +
+                ", name='" + name + '\'' +
+                ", title='" + title + '\'' +
+                ", logo=" + logo +
+                ", address='" + address + '\'' +
+                ", tuitionFee=" + tuitionFee +
+                ", description='" + description + '\'' +
+                ", link='" + link + '\'' +
+                ", imageNotes=" + Arrays.toString(imageNotes) +
+                '}';
     }
 }

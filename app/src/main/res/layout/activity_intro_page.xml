@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".IntroPage"
+    tools:context=".activities.Intro"
     android:orientation="vertical"
     android:background="@color/maroon">
 
@@ -23,18 +23,30 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Find your favorite university here"
+            android:text="Please type your name"
             android:padding="15dp"
             android:textSize="24dp"
             android:gravity="center"
             android:textColor="@color/vanilla"/>
+
+        <EditText
+            android:id="@+id/input_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Your name"
+            android:textColor="@color/vanilla"
+            android:textColorHint="@color/vanilla"
+            android:backgroundTint="@color/vanilla"
+            android:layout_margin="40dp"
+            android:padding="12dp"/>
+
         <Button
+            android:id="@+id/start_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Find now"
             android:textColor="@color/maroon"
             android:backgroundTint="@color/vanilla"
-            android:onClick="goToHomePage"
             />
     </LinearLayout>
 </LinearLayout>

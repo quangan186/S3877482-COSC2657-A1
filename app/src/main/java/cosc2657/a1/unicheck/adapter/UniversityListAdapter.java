@@ -18,7 +18,7 @@ import cosc2657.a1.unicheck.R;
 
 import cosc2657.a1.unicheck.model.University;
 
-public class UniversityListAdapter extends BaseAdapter implements Filterable {
+public class UniversityListAdapter extends BaseAdapter {
     protected Context context;
     protected ArrayList<University> universities;
     protected ArrayList<University> filteredList;
@@ -60,53 +60,5 @@ public class UniversityListAdapter extends BaseAdapter implements Filterable {
         logoView.setImageResource(universities.get(position).getLogo());
 
         return convertView;
-    }
-
-    @Override
-    public Filter getFilter() {
-        return new Filter() {
-            @Override
-            protected FilterResults performFiltering(CharSequence charSequence) {
-                FilterResults oReturn = new FilterResults();
-                ArrayList<University> results = new ArrayList<>();
-                if (filteredList == null)
-                    filteredList = universities;
-                if (charSequence != null) {
-                    if (filteredList != null && filteredList.size() > 0) {
-                        for (final University university : filteredList) {
-                            if (university.getName().toLowerCase()
-                                    .contains(charSequence.toString()))
-                                results.add(university);
-                        }
-                    }
-                    oReturn.values = results;
-                }
-                return oReturn;
-
-            }
-
-            @Override
-            protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-                universities = (ArrayList<University>) filterResults.values;
-                notifyDataSetChanged();
-            }
-        };
-    }
-
-    public void filter(String charText){
-        charText = charText.toLowerCase(Locale.getDefault());
-        filteredList.clear();
-        if (charText.length()==0){
-            filteredList.addAll(universities);
-        }
-        else {
-            for (University university : universities){
-                if (university.getTitle().toLowerCase(Locale.getDefault())
-                        .contains(charText)){
-                    filteredList.add(university);
-                }
-            }
-        }
-        notifyDataSetChanged();
     }
 }

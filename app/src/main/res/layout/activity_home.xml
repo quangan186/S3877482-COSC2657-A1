@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.Home"
+    android:background="@color/vanilla"
+    android:paddingHorizontal="20dp"
+    android:paddingTop="20dp"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_above="@id/bottomNav"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello"
+            android:textSize="44dp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome to UniCheck"
+            android:textSize="32dp"
+            android:paddingVertical="24dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="In this app, we want to help users update information about universities in the country including facilities, tuition fees, etc. for everyone to have an overview and make the right choices in choosing a school after graduating from high school"
+            android:textSize="20dp"
+            android:lineSpacingMultiplier="0.8"
+            android:lineSpacingExtra="24sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="To see the list, please click on the 'University' button on below"
+            android:textSize="20dp"
+            android:lineSpacingMultiplier="0.8"
+            android:lineSpacingExtra="24sp"
+            android:paddingVertical="24dp"
+            />
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:itemTextColor="@color/vanilla"
+        app:itemIconTint="@color/vanilla"
+        android:background="@drawable/round_corner"
+        app:menu="@menu/nav_menu"
+        />
+</RelativeLayout>

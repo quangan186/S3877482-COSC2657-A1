@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".UniversityDetails"
+    tools:context=".activities.UniversityDetails"
     android:orientation="vertical"
     android:background="@color/vanilla"
     >
@@ -78,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:text="Description"
                 android:paddingVertical="20dp"
-                android:lineSpacingMultiplier="0"
+                android:lineSpacingMultiplier="0.4"
                 android:lineSpacingExtra="24sp"
 
                 />

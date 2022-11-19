@@ -1,4 +1,4 @@
-package cosc2657.a1.unicheck;
+package cosc2657.a1.unicheck.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -38,12 +38,6 @@ public class UniversityDetails extends AppCompatActivity {
         }
 
         University university = (University) getIntent().getSerializableExtra("University");
-//        System.out.println(university.getIntroImage());
-//        System.out.println(university.getId());
-//        System.out.println(university.getName());
-//        System.out.println(university.getDescription());
-//        System.out.println(university.getLink());
-//        System.out.println(Arrays.toString(university.getImageNotes()));
 
         ImageButton likeButton = findViewById(R.id.like_button);
 
