@@ -9,5 +9,5 @@
     <item
         android:id="@+id/list"
         android:icon="@drawable/ic_list"
-        android:title="University" />
+        android:title="Universities" />
 </menu>

@@ -25,12 +25,16 @@ public class UniversityDetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_university_details);
+
+        // hide action bar
         if (getSupportActionBar() != null){
             getSupportActionBar().hide();
         }
 
+        // get object's data
         University university = (University) getIntent().getSerializableExtra("University");
 
+        // call widget by their id
         TextView acronymView = (TextView) findViewById(R.id.acronym);
         ImageView introImageView = (ImageView) findViewById(R.id.intro_image);
         TextView titleView = (TextView) findViewById(R.id.university_fullname);
@@ -40,6 +44,7 @@ public class UniversityDetails extends AppCompatActivity {
         Button linkButton = (Button) findViewById(R.id.link_button);
         ListView imageNotesView = (ListView) findViewById(R.id.image_notes);
 
+        // distribute object's data to the widget
         acronymView.setText(university.getTitle());
         introImageView.setImageResource(university.getIntroImage());
         titleView.setText(university.getName());
@@ -58,10 +63,12 @@ public class UniversityDetails extends AppCompatActivity {
         });
     }
 
+    // back button, directing user to the UniversityList activity
     public void backToPreviousPage(View view){
         finish();
     }
 
+    // set height for the listview of the images and note
     public static void getListViewSize(ListView myListView) {
         ListAdapter myListAdapter=myListView.getAdapter();
         if (myListAdapter==null) {

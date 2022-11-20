@@ -25,6 +25,7 @@ public class Intro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro_page);
 
+        // hide the action bar
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
@@ -36,6 +37,7 @@ public class Intro extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
+                    // If the input is not empty, the app will direct to the Home activity
                     if (!nameEditText.getText().toString().isEmpty()){
                         Intent intent = new Intent(Intro.this, Home.class);
                         saveData();
@@ -48,6 +50,7 @@ public class Intro extends AppCompatActivity {
         });
     }
 
+    // save the input name to internal storage
     private void saveData(){
         try {
             String path = INTERNAL_PATH + USERNAME_FILE;

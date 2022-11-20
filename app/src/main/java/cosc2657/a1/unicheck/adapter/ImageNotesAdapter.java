@@ -45,9 +45,11 @@ public class ImageNotesAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         convertView = layoutInflater.inflate(R.layout.image_note, null);
 
+        // call the widget
         ImageView imageView = (ImageView) convertView.findViewById(R.id.child_image) ;
         TextView noteView = (TextView) convertView.findViewById(R.id.note);
 
+        // distribute the object's data
         imageView.setImageResource(imageNotes[position].getImage());
         noteView.setText(imageNotes[position].getNote());
 

@@ -47,7 +47,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="To see the list, please click on the 'University' button on below"
+            android:text="To see the list, please click on the 'Universities' button on below"
             android:textSize="20dp"
             android:lineSpacingMultiplier="0.8"
             android:lineSpacingExtra="24sp"

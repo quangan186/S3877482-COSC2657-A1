@@ -40,6 +40,7 @@ public class UniversityList extends AppCompatActivity {
 
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNav);
 
+        // set onClick for the bottom navigation bar items
         bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -55,10 +56,12 @@ public class UniversityList extends AppCompatActivity {
             }
         });
 
+        // make the listview display all university rows
         listView = (ListView) findViewById(R.id.universities);
         universityListAdapter = new UniversityListAdapter(UniversityList.this, universityList);
         listView.setAdapter(universityListAdapter);
 
+        // send the object's data and direct user to the UniversityDetails activities
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -79,6 +82,7 @@ public class UniversityList extends AppCompatActivity {
             MenuItem sortItem = menu.findItem(R.id.sort);
             searchView = (SearchView) menuItem.getActionView();
 
+            // make the search button work and update the list depended on user's input
             searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
                 @Override
                 public boolean onQueryTextSubmit(String s) {
@@ -106,6 +110,7 @@ public class UniversityList extends AppCompatActivity {
                 }
             });
 
+            // sort the list by ascending and descending
             sortItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
                 @Override
                 public boolean onMenuItemClick(MenuItem menuItem) {
@@ -126,6 +131,7 @@ public class UniversityList extends AppCompatActivity {
         return true;
     }
 
+    // compare the University based on their full name
     public Comparator<University> nameAscending = new Comparator<University>() {
         @Override
         public int compare(University university, University t1) {

@@ -15,9 +15,12 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
+        // hide the action bar
         if (getSupportActionBar() != null){
             getSupportActionBar().hide();
         }
+
+        // make the splash screen play 2 seconds before directing to the Intro activity
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

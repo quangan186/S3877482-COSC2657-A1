@@ -48,11 +48,13 @@ public class UniversityListAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         convertView = layoutInflater.inflate(R.layout.university_row, null);
 
+        // call the widget
         LinearLayout universityRowLayout = (LinearLayout) convertView.findViewById(R.id.university_id);
         TextView universityTitleView = (TextView) convertView.findViewById(R.id.university_title) ;
         TextView universityNameView = (TextView) convertView.findViewById(R.id.university_name);
         ImageView logoView = (ImageView) convertView.findViewById(R.id.logo);
 
+        // distribute the object's data
         universityRowLayout.setId(universities.get(position).getId());
         universityTitleView.setText(universities.get(position).getTitle());
         universityNameView.setText(universities.get(position).getName());

@@ -27,10 +27,11 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         TextView usernameView = (TextView) findViewById(R.id.username);
-        usernameView.setText("Hello " + showUsername());
+        usernameView.setText("Hello " + showUsername()); // display input's name from internal storage
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNav);
 
+        // set onClick for the bottom navigation bar items
         bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -47,12 +48,7 @@ public class Home extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        this.onCreate(null);
-    }
-
+    // show the input name
     private String showUsername(){
         String data = getData();
         if (data.isEmpty()){
@@ -61,6 +57,8 @@ public class Home extends AppCompatActivity {
         String[] usernames = data.split("\n");
         return usernames[usernames.length - 1].split(":")[1];
     }
+
+    // get the input's name from internal storage
     private String getData(){
         String path = INTERNAL_PATH + USERNAME_FILE;
         File file = new File(path);
