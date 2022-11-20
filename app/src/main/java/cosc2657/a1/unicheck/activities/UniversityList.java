@@ -21,10 +21,11 @@ import java.util.Comparator;
 
 import cosc2657.a1.unicheck.R;
 import cosc2657.a1.unicheck.adapter.UniversityListAdapter;
+import cosc2657.a1.unicheck.data.UniversitiesData;
 import cosc2657.a1.unicheck.model.University;
 
 public class UniversityList extends AppCompatActivity {
-    private ArrayList<University> universityList = new cosc2657.a1.unicheck.data.UniversityList().getUniversities();
+    private ArrayList<University> universityList = new UniversitiesData().getUniversities();
     BottomNavigationView bottomNavigationView;
     SearchView searchView;
     ListView listView;

@@ -1,7 +1,6 @@
 package cosc2657.a1.unicheck.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -17,16 +16,12 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import java.util.Arrays;
-
 import cosc2657.a1.unicheck.R;
 import cosc2657.a1.unicheck.adapter.ImageNotesAdapter;
-import cosc2657.a1.unicheck.data.FavoriteList;
 import cosc2657.a1.unicheck.model.University;
 
 public class UniversityDetails extends AppCompatActivity {
     private boolean isLiked = false;
-    private FavoriteList favoriteList = new FavoriteList();
 
     @SuppressLint("DefaultLocale")
     @Override
@@ -39,30 +34,7 @@ public class UniversityDetails extends AppCompatActivity {
 
         University university = (University) getIntent().getSerializableExtra("University");
 
-        ImageButton likeButton = findViewById(R.id.like_button);
-
-        if (favoriteList.getFavoriteList().contains(university)){
-            likeButton.setImageResource(R.drawable.ic_like);
-        } else {
-            likeButton.setImageResource(R.drawable.ic_unlike);
-        }
-
-        likeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                isLiked = !isLiked;
-                if(isLiked){
-                    likeButton.setImageResource(R.drawable.ic_like);
-                    favoriteList.addFavoriteUniversity(university);
-                    System.out.println(favoriteList);
-                }else{
-                    likeButton.setImageResource(R.drawable.ic_unlike);
-                    favoriteList.deleteFavoriteUniversity(university);
-                    System.out.println(favoriteList);
-                }
-            }
-        });
-
+        TextView acronymView = (TextView) findViewById(R.id.acronym);
         ImageView introImageView = (ImageView) findViewById(R.id.intro_image);
         TextView titleView = (TextView) findViewById(R.id.university_fullname);
         TextView descriptionView = (TextView) findViewById(R.id.university_description);
@@ -71,6 +43,7 @@ public class UniversityDetails extends AppCompatActivity {
         Button linkButton = (Button) findViewById(R.id.link_button);
         ListView imageNotesView = (ListView) findViewById(R.id.image_notes);
 
+        acronymView.setText(university.getTitle());
         introImageView.setImageResource(university.getIntroImage());
         titleView.setText(university.getName());
         descriptionView.setText(university.getDescription());
@@ -89,10 +62,6 @@ public class UniversityDetails extends AppCompatActivity {
     }
 
     public void backToPreviousPage(View view){
-//        Intent intent = new Intent(this, MainActivity.class);
-//        intent.putExtra("favoriteList", favoriteList);
-//        startActivity(intent);
-        System.out.println(favoriteList.getFavoriteList());
         finish();
     }
 
