@@ -21,9 +21,6 @@ import cosc2657.a1.unicheck.adapter.ImageNotesAdapter;
 import cosc2657.a1.unicheck.model.University;
 
 public class UniversityDetails extends AppCompatActivity {
-    private boolean isLiked = false;
-
-    @SuppressLint("DefaultLocale")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +44,7 @@ public class UniversityDetails extends AppCompatActivity {
         introImageView.setImageResource(university.getIntroImage());
         titleView.setText(university.getName());
         descriptionView.setText(university.getDescription());
-        tuitionView.setText(String.format("Tuition fee annual: %,2f", university.getTuitionFee()));
+        tuitionView.setText(String.format("Tuition fee annual: %.0f million VND", university.getTuitionFee()));
         addressView.setText("Address: " + university.getAddress());
         imageNotesView.setAdapter(new ImageNotesAdapter(getApplicationContext(), university.getImageNotes()));
         getListViewSize(imageNotesView);
@@ -82,7 +79,5 @@ public class UniversityDetails extends AppCompatActivity {
         ViewGroup.LayoutParams params=myListView.getLayoutParams();
         params.height=totalHeight + (myListView.getDividerHeight() * (myListAdapter.getCount() - 1));
         myListView.setLayoutParams(params);
-        // print height of adapter on log
-        Log.i("height of listItem:", String.valueOf(totalHeight));
     }
 }

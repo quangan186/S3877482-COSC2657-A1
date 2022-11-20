@@ -18,7 +18,7 @@ import cosc2657.a1.unicheck.model.University;
 public class ImageNotesAdapter extends BaseAdapter {
     protected Context context;
     protected ImageNote[] imageNotes;
-    LayoutInflater layoutInflater;
+    protected LayoutInflater layoutInflater;
 
     public ImageNotesAdapter(Context context, ImageNote[] imageNotes) {
         this.context = context;

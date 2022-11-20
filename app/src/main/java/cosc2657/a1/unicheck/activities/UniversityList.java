@@ -26,13 +26,12 @@ import cosc2657.a1.unicheck.model.University;
 
 public class UniversityList extends AppCompatActivity {
     private ArrayList<University> universityList = new UniversitiesData().getUniversities();
-    BottomNavigationView bottomNavigationView;
-    SearchView searchView;
-    ListView listView;
-    UniversityListAdapter universityListAdapter;
-    Intent intent;
-    int count = 0;
-
+    private BottomNavigationView bottomNavigationView;
+    private SearchView searchView;
+    private ListView listView;
+    private UniversityListAdapter universityListAdapter;
+    private Intent intent;
+    private int count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

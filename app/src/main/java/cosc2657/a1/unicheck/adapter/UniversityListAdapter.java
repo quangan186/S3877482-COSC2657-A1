@@ -21,8 +21,7 @@ import cosc2657.a1.unicheck.model.University;
 public class UniversityListAdapter extends BaseAdapter {
     protected Context context;
     protected ArrayList<University> universities;
-    protected ArrayList<University> filteredList;
-    LayoutInflater layoutInflater;
+    protected LayoutInflater layoutInflater;
 
     public UniversityListAdapter(Context context, ArrayList<University> universities) {
         this.context = context;

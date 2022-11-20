@@ -17,7 +17,7 @@ import java.io.IOException;
 import cosc2657.a1.unicheck.R;
 
 public class Intro extends AppCompatActivity {
-    EditText nameEditText;
+    private EditText nameEditText;
     private final static String INTERNAL_PATH = Environment.getDataDirectory().getPath() + "/data/cosc2657.a1.unicheck/";
     private final static String USERNAME_FILE = "user.txt";
     @Override
